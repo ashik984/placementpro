@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skill Gap Analysis - PlacementPro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="d-flex">
+    <div class="sidebar p-3">
+        <h4 class="text-white">Student Panel</h4>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="skill-gap.html">Skill Gap Analysis</a>
+    </div>
+    <div class="content p-4">
+        <h2>Skill Gap Analysis 📊</h2>
+        <p class="text-muted">Targeting: <strong>Data Analyst Roles</strong></p> [cite: 35]
+        
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card p-4 shadow">
+                    <canvas id="gapChart"></canvas>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-4 shadow bg-light">
+                    <h5>Action Plan</h5> [cite: 35]
+                    <p id="recommendationText">Analyzing your profile...</p>
+                    <a href="#" class="btn btn-primary btn-sm">Start Learning Path</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Logic: Comparing student skills (HTML/JS) vs Market (PowerBI/SQL) [cite: 35]
+    const ctx = document.getElementById('gapChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: ['SQL', 'Python', 'PowerBI', 'Communication', 'Statistics'],
+            datasets: [{
+                label: 'Market Demand (80%)', [cite: 35]
+                data: [90, 85, 80, 70, 75],
+                backgroundColor: 'rgba(13, 110, 253, 0.2)',
+                borderColor: '#0d6efd'
+            }, {
+                label: 'Your Current Profile',
+                data: [40, 50, 10, 80, 30],
+                backgroundColor: 'rgba(255, 193, 7, 0.2)',
+                borderColor: '#ffc107'
+            }]
+        }
+    });
+    document.getElementById("recommendationText").innerHTML = 
+        "80% of placed students had <strong>PowerBI</strong>, but you do not. [cite: 35] <strong>Action:</strong> Enroll in the PowerBI certification module.";
+</script>
+</body>
+</html>

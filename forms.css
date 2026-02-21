@@ -1,0 +1,41 @@
+/* Background */
+.login-body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Card */
+.login-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    width: 380px;
+}
+
+/* Title */
+.login-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2c5364;
+}
+
+/* Input fields */
+.input-field {
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 15px;
+}
+
+/* Button */
+.login-btn {
+    background: #2c5364;
+    color: white;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #203a43;
+}

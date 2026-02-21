@@ -1,0 +1,11 @@
+.hero {
+    background: #f8f9fa;
+    padding: 100px 0;
+}
+
+.footer {
+    background: #212529;
+    color: white;
+    padding: 15px;
+    margin-top: 50px;
+}

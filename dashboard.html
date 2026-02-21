@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alumni Dashboard - PlacementPro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/dashboard.css">
+    
+    <script>
+        // Authentication Guard
+        const isLoggedIn = localStorage.getItem("isLoggedIn");
+        const role = localStorage.getItem("role");
+
+        // Redirect if not logged in OR if the user is not an alumni
+        if (isLoggedIn !== "true") {
+            window.location.href = "../../login.html";
+        } else if (role !== "alumni") {
+            // Send them to their appropriate dashboard if they try to access this
+            window.location.href = `../${role}/dashboard.html`; 
+        }
+    </script>
+</head>
+<body>
+
+<div class="d-flex">
+
+    <div class="sidebar p-3 bg-dark text-white" style="min-height: 100vh; width: 250px;">
+        <h4 class="mb-4">Alumni Portal</h4>
+        <nav class="nav flex-column gap-2">
+            <a class="nav-link text-white bg-primary rounded" href="dashboard.html">Dashboard</a>
+            <a class="nav-link text-white" href="job-referral.html">Job Referrals</a>
+            <a class="nav-link text-white" href="mentorship-booking.html">Mentorship</a>
+        </nav>
+        <hr>
+        <button onclick="logout()" class="btn btn-outline-light mt-3 w-100">Logout</button>
+    </div>
+
+    <div class="content p-4 flex-grow-1">
+        <header class="mb-4">
+            <h2>Welcome, Alumni 👋</h2>
+            <p class="text-muted">Thank you for giving back to the community.</p>
+        </header>
+
+        <div class="row g-4 mt-2">
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0 p-4 text-center">
+                    <h5 class="text-muted">Posted Jobs</h5>
+                    <h3 class="display-5 fw-bold text-primary">3</h3>
+                    <small class="text-success">2 Active Referrals</small>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0 p-4 text-center">
+                    <h5 class="text-muted">Mentorship Slots</h5>
+                    <h3 class="display-5 fw-bold text-info">5</h3>
+                    <small class="text-muted">3 Booked this week</small>
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+</div>
+
+<script src="../../assets/js/auth.js"></script>
+
+</body>
+</html>
